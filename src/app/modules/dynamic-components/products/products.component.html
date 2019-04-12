@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="space-between start">
+  <div *ngFor="let product of data.products" fxFlex="30" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center stretch" class="product-card">
+    <img [src]="buildPath(product.imageSrc)" class="logo" />
+    <h4 class="mat-h2">{{product.title}}</h4>
+    <div class="description">
+      Lorem ipsum dolor sit amet, at facer facilisis vituperatoribus mel, eu est tantas dolores principes.
+    </div>
+    <button mat-flat-button color="primary">Apply</button>
+  </div>
+</div>

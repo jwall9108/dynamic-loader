@@ -1,0 +1,25 @@
+<div fxFill fxLayout="row" class="wrapper">
+  <div fxFlex="15" fxLayout="column" fxLayoutAlign="space-between stretch" class="side-nav">
+    <div fxLayout="column"  fxLayoutGap="10px">
+      <p>Page Elements</p>
+      <button mat-flat-button color="primary" (click)="onAdd('branding')">Branding</button>
+      <button mat-flat-button color="primary" (click)="onAdd('header')">Header</button>
+      <button mat-flat-button color="primary" (click)="onAdd('product')">Product</button>
+
+      <p>User Controls</p>
+      <button mat-flat-button color="primary" (click)="onAdd('login')">Login</button>
+      <button mat-flat-button color="primary" (click)="onAdd('userInfo')">User Info</button>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <button mat-flat-button (click)="clear()">Clear</button>
+      <button mat-flat-button color="accent" (click)="save()">Save</button>
+    </div>
+  </div>
+  <div fxFlex class="component-container" fxLayout="column" fxLayoutGap="10px">
+    <ng-container *ngIf="!dynamicComponents.length; else components">
+      <p>No components loaded.  Please select a component to load</p>
+    </ng-container>   
+     
+    <ng-template #components appComponentLoader *ngFor="let component of dynamicComponents" [data]="component"></ng-template>
+  </div>
+</div>

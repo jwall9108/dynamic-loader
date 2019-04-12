@@ -1,1 +1,87 @@
+@import "_colors";
+@import '~@angular/material/theming';
+@include mat-core();
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+
+$cp-palette-primary: (50: #E0EEF7,
+100: #B3D4EB,
+200: #80B8DE,
+300: #4D9CD0,
+400: #2686C6,
+500: $primary-blue,
+600: #0069B6,
+700: #005EAD,
+800: #0054A5,
+900: #004297,
+A100: #C2D8FF,
+A200: #8FB7FF,
+A400: #5C97FF,
+A700: #4287FF,
+contrast: (500: white, 600: white, 700: white, ));
+
+$cp-palette-error: (50: #F8E3E6,
+100: #EDB8C1,
+200: #E28998,
+300: #D6596E,
+400: #CD364F,
+500: #CD364F,
+600: #BE102B,
+700: #B60D24,
+800: #AF0A1E,
+900: #A20513,
+A100: #FFCDD0,
+A200: #FF9A9F,
+A400: #FF676F,
+A700: #FF4D57,
+contrast: (500: white, 600: white, 700: white, ));
+
+$cp-palette-accent: (50: #E1F7FC,
+100: #B3ECF8,
+200: #81DFF3,
+300: #4ED2EE,
+400: #28C9EB,
+500: #d03027,
+600: #02B9E4,
+700: #01B1E0,
+800: #01A9DD,
+900: #019BD7,
+A100: #FEFFFF,
+A200: #CBEFFF,
+A400: #98DFFF,
+A700: #7FD6FF,
+contrast: (500: white, 600: white, 700: white, ));
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.app {
+
+  @include angular-material-theme(mat-light-theme(mat-palette($cp-palette-primary, 500, 600, 700),
+  mat-palette($cp-palette-accent, 500, 600, 700),
+  mat-palette($cp-palette-error, 500, 600, 700)));
+
+  .mat-flat-button {
+    border-radius: 25px;
+    text-transform: uppercase;
+  }
+
+  hr {
+    border-color: #0D74Af;
+  }
+}
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  overflow: hidden;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

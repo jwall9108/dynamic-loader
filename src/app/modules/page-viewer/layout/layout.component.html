@@ -1,0 +1,12 @@
+<div fxFill fxLayout="row" class="wrapper">
+  <div fxFlex="15" fxLayout="column" fxLayoutAlign="space-between stretch" class="side-nav">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <button *ngFor="let page of data" mat-flat-button color="primary" (click)="load(page.componentData)">{{page.name}}</button>
+    </div>
+  </div>
+  <div fxFlex class="component-container" fxLayout="column" fxLayoutGap="10px">
+    <div class="component-container" fxLayout="column" fxLayoutGap="20px" *ngIf="selectedPage">
+      <ng-template appComponentLoader *ngFor="let component of selectedPage" [data]="component"></ng-template>
+    </div>
+  </div>
+</div>

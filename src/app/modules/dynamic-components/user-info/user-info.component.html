@@ -1,0 +1,22 @@
+<div class="wrapper" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+
+  <h1>{{data.title}}</h1>
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="50px">
+    <mat-form-field fxFlex class="default-input" color="accent">
+      <mat-label>User Name</mat-label>
+      <input matInput type="text" [(ngModel)]="data.userName" />
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="50px">
+    <mat-form-field fxFlex class="default-input" color="accent">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" [(ngModel)]="data.firstName" />
+    </mat-form-field>
+
+    <mat-form-field fxFlex class="default-input" color="accent">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" [(ngModel)]="data.lastName" />
+    </mat-form-field>
+  </div>
+</div>
